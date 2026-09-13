@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Hunter</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 align="center">Movie Hunter</h1>
+
+        <nav>
+            <a href="/moviepage">All Movies</a>
+            <a href="/moviepage?filter=theaters">In Theaters</a>
+            <a href="https://www.imdb.com" target="_blank">External Link</a>
+        </nav>
+        <form action="/moviepage" method="GET" class="search-form">
+
+            <input
+                type="text"
+                name="search"
+                placeholder="Search for a movie..."
+                value="<%= search %>"
+            >
+
+            <% if (showInTheaters) { %>
+                <input type="hidden" name="filter" value="theaters">
+            <% } %>
+
+            <button type="submit">Search</button>
+
+        </form>
+
+    </header>
+
+    <main>
+
+        <h2><%= currentFilter %></h2>
+
+        <% if (movies.length === 0 && search) { %>
+
+            <p class="not-found">Movie not found in our database.</p>
+
+        <% } else { %>
+
+            <div class="movie-container">
+
+                <% movies.forEach(movie => { %>
+
+                    <div class="card">
+
+                        <img src="<%= movie.poster %>" alt="<%= movie.title %>">
+
+                        <h3><%= movie.title %></h3>
+
+                        <div class="info">
+                            <span>RATING <%= movie.rating %></span>
+                            <span>💬 <%= movie.commentsCount %></span>
+                        </div>
+
+                    </div>
+
+                <% }) %>
+
+            </div>
+
+        <% } %>
+
+    </main>
+
+</body>
+</html>

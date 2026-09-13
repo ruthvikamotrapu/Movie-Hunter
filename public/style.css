@@ -1,0 +1,68 @@
+body {
+    background-color: #121212;
+    color: yellow;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: yellow;
+}
+
+nav a {
+    color: yellow;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+.movie-container {
+    display: flex;
+    gap: 75px;
+}
+
+.card img {
+    width: 150px;
+    height: 220px;
+    border-radius: 4px;
+}
+
+.info {
+    font-size: 12px;
+    margin-top: 5px;
+}
+.search-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.search-form input {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-form button {
+    padding: 10px 18px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.not-found {
+    font-size: 20px;
+    margin-top: 30px;
+}
